@@ -53,8 +53,7 @@
 
 ## address テーブル
 
-| Column         | Type       
-| Options     |
+| Column         | Type       | Options     |
 | ---------------| -----------| ------------|
 | prefecture_id  | integer    | null: false |                               |
 | city           | string     | null: false |
@@ -62,7 +61,7 @@
 | post_code      | string     | null: false |
 | building_name  | string     |             |
 | phone_number   | string     | null: false |
-| purchaser　　　　| references | null: false |
+| purchaser_id　　| references | null: false |
 ### Association
 
 - belongs_to :purchaser 
