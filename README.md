@@ -39,7 +39,7 @@
 - belongs_to :user
 - has_one :purchaser
 
-## purchaser テーブル
+## purchasers テーブル
 
 | Column   | Type       | Options           |
 | ---------| ---------- | ------------------|
@@ -48,10 +48,11 @@
 
 ### Association
 
-- has_one :item
+- belongs_to :item
 - belongs_to :user
+- belongs_to :address
 
-## address テーブル
+## addresses テーブル
 
 | Column         | Type       | Options     |
 | ---------------| -----------| ------------|
