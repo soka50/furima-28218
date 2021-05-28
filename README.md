@@ -50,7 +50,7 @@
 
 - belongs_to :item
 - belongs_to :user
-- belongs_to :address
+- has_one :address
 
 ## addresses テーブル
 
@@ -62,7 +62,7 @@
 | post_code      | string     | null: false |
 | building_name  | string     |             |
 | phone_number   | string     | null: false |
-| purchaser_id　　| references | null: false |
+| purchaser　    | references | null: false, foreign_key: true |
 ### Association
 
 - belongs_to :purchaser 
