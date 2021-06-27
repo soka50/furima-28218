@@ -83,13 +83,13 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("Last name can't be blank", 'Last name 全角文字を使用してください')
       end
 
-      it 'ユーザー本名の名字は、フリガナが必須であること' do
+      it 'ユーザー本名の名字は、入力必須であること' do
         @user.first_name_kana = 'あいうえお'
         @user.valid?
         expect(@user.errors.full_messages).to include('First name kana 全角文字を使用してください')
       end
 
-      it 'ユーザー本名の名前は、フリガナが必須であること' do
+      it 'ユーザー本名の名前は、入力必須であること' do
         @user.last_name_kana = 'あいうえお'
         @user.valid?
         expect(@user.errors.full_messages).to include('Last name kana 全角文字を使用してください')
