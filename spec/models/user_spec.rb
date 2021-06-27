@@ -108,9 +108,11 @@ RSpec.describe User, type: :model do
       end
 
       it '生年月日が必須であること' do
-        expect(@user).to be_valid
+        @user.birth = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Birth can't be blank")
       end
-    end
+      end
     end
   end
 end
