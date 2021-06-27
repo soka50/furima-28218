@@ -11,12 +11,7 @@ RSpec.describe User, type: :model do
         expect(@user).to be_valid
       end
 
-      it '生年月日が必須であること' do
-        expect(@user).to be_valid
-      end
-    end
-
-    context '新規登録できないとき' do
+  context '新規登録できないとき' do
       it 'ニックネームが必須であること' do
         @user.nickname = ''
         @user.valid?
@@ -111,6 +106,11 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include('Last name kana 全角文字を使用してください')
       end
+
+      it '生年月日が必須であること' do
+        expect(@user).to be_valid
+      end
+    end
     end
   end
 end
