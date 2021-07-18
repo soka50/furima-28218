@@ -9,15 +9,10 @@ class Item < ApplicationRecord
   belongs_to :day_to_ship
 
   with_options presence: true do
-    validates :product＿name 
-    validates :product＿info
-    validates :price   
-    validates :user  
-    validates :category
-    validates :product_condition
-    validates :shipping_charge
-    validates :prefecture
-    validates :day_to_ship
+    validates :product_name 
+    validates :product_info
+    validates :price, numericality: { greater_than: 300, less_than: 10000000 } 
+    validates :image
   end
 
   
