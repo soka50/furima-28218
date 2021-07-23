@@ -9,13 +9,12 @@ class Item < ApplicationRecord
   belongs_to :day_to_ship
 
   with_options presence: true do
-    validates :product_name 
+    validates :product_name
     validates :product_info
-    validates :price, numericality: { greater_than: 300, less_than: 10000000 } 
+    validates :price, numericality: { greater_than: 299, less_than: 10_000_000 }
     validates :image
   end
 
-  
   with_options numericality: { other_than: 1, message: 'Select' } do
     validates :category_id
     validates :product_condition_id
@@ -23,5 +22,4 @@ class Item < ApplicationRecord
     validates :prefecture_id
     validates :day_to_ship_id
   end
-                 
 end

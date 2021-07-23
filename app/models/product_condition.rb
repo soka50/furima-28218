@@ -1,4 +1,4 @@
-class ProductCondition< ActiveHash::Base
+class ProductCondition < ActiveHash::Base
   self.data = [
     { id: 1, name: '--' },
     { id: 2, name: '新品・未使用' },
@@ -8,8 +8,7 @@ class ProductCondition< ActiveHash::Base
     { id: 6, name: '傷や汚れあり' },
     { id: 7, name: '全面的に状態が悪い' }
   ]
- 
+
   include ActiveHash::Associations
   has_many :items
-
 end

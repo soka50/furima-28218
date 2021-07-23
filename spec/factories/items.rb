@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :item do 
+  factory :item do
     product_name { 'ゲーム' }
     product_info { '面白い' }
     category_id { 3 }
@@ -7,7 +7,7 @@ FactoryBot.define do
     shipping_charge_id { 5 }
     prefecture_id { 6 }
     day_to_ship_id { 7 }
-    price  { 500 }
+    price { 500 }
     association :user
 
     after(:build) do |item|
