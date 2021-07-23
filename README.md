@@ -3,7 +3,7 @@
 
 ## users テーブル
 
-| Column                | Type   | Options     　　　　　　　　|
+| Column                | Type   | Options                   |
 | --------------------- | ------ | ------------------------- |
 | nickname              | string | null: false               |
 | email                 | string | null: false, unique: true |
@@ -25,14 +25,14 @@
 | Column               | Type       | Options               |
 | -------------------- | ------     | --------------------- |
 | product＿name        | string     | null: false           |
-| product＿info        | text       | null: false           |　
+| product＿info        | text       | null: false           |
 | category_id          | integer    | null: false           |
 | product_condition_id | integer    | null: false           |
-| shipping_charge_id  | integer    | null: false           |
+| shipping_charge_id   | integer    | null: false           |
 | prefecture_id        | integer    | null: false           |
 | day_to_ship_id       | integer    | null: false           |
 | price                | integer    | null: false           |
-| user           　　   | references | foreign_key: true     |
+| user                 | references | foreign_key: true     |
 
 ### Association
 
@@ -43,8 +43,8 @@
 
 | Column   | Type       | Options           |
 | ---------| ---------- | ------------------|
-| user　　　| references | foreign_key: true |
-| item　　　| references | foreign_key: true |
+| user     | references | foreign_key: true |
+| item     | references | foreign_key: true |
 
 ### Association
 
@@ -56,13 +56,13 @@
 
 | Column         | Type       | Options     |
 | ---------------| -----------| ------------|
-| prefecture_id  | integer    | null: false |                               |
+| prefecture_id  | integer    | null: false |                               
 | city           | string     | null: false |
 | house_number   | string     | null: false |
 | post_code      | string     | null: false |
 | building_name  | string     |             |
 | phone_number   | string     | null: false |
-| purchaser　    | references | null: false, foreign_key: true |
+| purchaser      | references | null: false, foreign_key: true |
 ### Association
 
 - belongs_to :purchaser 
