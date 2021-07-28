@@ -18,6 +18,18 @@ class ItemsController < ApplicationController
       render :new
     end
   end
+   
+  def show
+    @item = Item.find(params[:id])
+  end
+
+  # def destroy
+  #   @item = Item.find(params[:id])
+  # end
+
+  # def edit
+  #   @item = Item.find(params[:id])
+  # end
 
   private
 
