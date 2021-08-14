@@ -1,16 +1,21 @@
 class PurchasesController < ApplicationController
+  before_action :authenticate_user!,  only: [:index, :create ]
+  before_action :set_item, only: [:index, :create ]
+  before_action :move_root, only: [:index, :create ]
+  
   def index
-    @item = Item.find(params[:item_id])
+    
     @order = Order.new
   end
 
   def create
-    @item = Item.find(params[:item_id])
+   
     @order = Order.new(order_params)
     if @order.valid?
       pay_item
       @order.save
       return redirect_to root_path
+    
     else
       render 'index'
     end
@@ -30,4 +35,11 @@ class PurchasesController < ApplicationController
         currency: 'jpy'                 
     )
   end
+  def set_item
+    @item = Item.find(params[:item_id])
+  end
+  def move_root
+    return redirect_to root_path if @item.purchase.present? || current_user.id == @item.user.id
+  end
+
 end
