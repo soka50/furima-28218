@@ -8,30 +8,28 @@ RSpec.describe Order, type: :model do
     sleep(0.5)
   end
 
-
   describe '#create' do
     context '内容に問題がない場合' do
       it 'building_nameは空でも保存できること' do
         @order.building_name = ''
         expect(@order).to be_valid
-    end
+      end
 
-       it "tokenがあれば保存ができること" do
+      it 'tokenがあれば保存ができること' do
         expect(@order).to be_valid
-     end
-  
+      end
     end
 
     context '内容に問題が有る場合' do
-      it "tokenが空では登録できないこと" do
+      it 'tokenが空では登録できないこと' do
         @order.token = nil
         @order.valid?
         expect(@order.errors.full_messages).to include("Token can't be blank")
       end
 
       it '郵便番号が必須であること' do
-         @order.postal_code = ''
-         @order.valid?
+        @order.postal_code = ''
+        @order.valid?
         expect(@order.errors.full_messages).to include("Postal code can't be blank")
       end
 
@@ -54,7 +52,7 @@ RSpec.describe Order, type: :model do
       end
 
       it '電話番号が必須であること' do
-        @order.phone_number= ''
+        @order.phone_number = ''
         @order.valid?
         expect(@order.errors.full_messages).to include("Phone number can't be blank")
       end
@@ -70,13 +68,6 @@ RSpec.describe Order, type: :model do
         @order.valid?
         expect(@order.errors.full_messages).to include("Phone number can't be blank")
       end
-
-      
-
-
-      
-      
-      
     end
   end
 end
