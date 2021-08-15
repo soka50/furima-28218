@@ -68,30 +68,6 @@ RSpec.describe Order, type: :model do
         @order.valid?
         expect(@order.errors.full_messages).to include("Phone number can't be blank")
       end
-
-      it 'user_idが空では登録できないこと' do
-        @order.user_id = nil
-        @order.valid?
-        expect(@order.errors.full_messages).to include("User can't be blank")
-      end
-
-      it 'item_idが空では登録できないこと' do
-        @order.item_id = nil
-        @order.valid?
-        expect(@order.errors.full_messages).to include("Item can't be blank")
-      end
-
-      it '電話番号が12桁以上では登録できないこと' do
-        @order.phone_number = ''
-        @order.valid?
-        expect(@order.errors.full_messages).to include("Phone number can't be blank")
-      end
-
-      it '電話番号が英数混合では登録できないこと' do
-        @order.phone_number = ''
-        @order.valid?
-        expect(@order.errors.full_messages).to include("Phone number can't be blank")
-      end
     end
   end
 end
