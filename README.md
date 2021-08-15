@@ -18,7 +18,7 @@
 
 - has_many :items
 
-- has_many :purchasers
+- has_many :purchases
 
 ##  items テーブル
 
@@ -37,7 +37,7 @@
 ### Association
 
 - belongs_to :user
-- has_one :purchaser
+- has_one :purchase
 
 ## purchasers テーブル
 
@@ -65,4 +65,4 @@
 | purchaser      | references | null: false, foreign_key: true |
 ### Association
 
-- belongs_to :purchaser 
+- belongs_to :purchase 
