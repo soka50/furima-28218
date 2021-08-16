@@ -43,7 +43,7 @@ class ItemsController < ApplicationController
   private
 
   def move_root
-    redirect_to root_path if current_user.id != @item.user.id
+    redirect_to root_path if current_user.id != @item.user.id || @item.purchase.present?
   end
 
   def set_item
